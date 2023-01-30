@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/index.css">
+	<title>Калькулятор</title>
+	<script src="./scripts/index.js" type="module"></script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<h1 class="title">Подберите нужный комплект оборудования самостоятельно:</h1>
+
+		<form class="calculator">
+			<div class="product__block">
+				<div class="product antenna">
+					<div class="product__info">
+						<h2 class="product__name"></h2>
+						<span class="product__power-ratio">Коэффициент усиления</span>
+						<select class="product__power" name="antenna-power" id="antenna-power"></select>
+						<p class="product__description"></p>
+						<span class="product__price"></span>
+					</div>
+
+					<div class="product__img-block">
+						<img class="product__img" src="#" alt="Изображение товара" width="150">
+						<a class="product__link" href="#" target="__blank">Подробнее о товаре</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="calculator__result-block">
+				<span class="calculator__result">Итого: <span class="calculator__num">1000</span> руб.</span>
+			</div>
+
+			<button class="calculator__submit" type="submit">Добавить в корзину</button>
+			<button class="calculator__help" type="button">Помогите выбрать</button>
+		</form>
+	</div>
+</body>
+
+</html>
