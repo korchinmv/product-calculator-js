@@ -23,6 +23,10 @@
 	padding: 10px;
 }
 
+.product__img {
+	object-fit: cover;
+}
+
 .product:not(:last-child) {
 	margin-bottom: 10px;
 }

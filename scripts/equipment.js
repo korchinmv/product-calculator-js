@@ -3,7 +3,7 @@ export const antennas = [
     type: "antenna",
     id: 1,
     name: "Антенна 3G/4G Antex PETRA BB MIMO 2x2 UniBox",
-    price: "3600 руб.",
+    price: "3600",
     description:
       "Внешняя антенна 3G/4G с усилением 15 дБ и гермобоксом для установки на кронштейн, на крышу, на мачту.",
     power: "15 дБ",
@@ -15,7 +15,7 @@ export const antennas = [
     type: "antenna",
     id: 2,
     name: "Антенна 3G/4G Antex AGATA MIMO 2x2 BOX",
-    price: "5500 руб.",
+    price: 5500,
     description:
       "Универсальная антенна с усилением 17 дБ для установки на даче, в загородном доме, на адресах с затрудненным приемом сигнала.",
     power: "17 дБ",
@@ -27,7 +27,7 @@ export const antennas = [
     type: "antenna",
     id: 3,
     name: "Антенна 3G/4G KROKS KNA27-1700/2700 MIMO",
-    price: "7500 руб.",
+    price: 7500,
     description:
       "Параболическая антенна MIMO. Самый мощный прибор на рынке с усилением 27 дБ, который позволит установить стабильное соединение с интернетом там, где другие антенны бессильны.",
     power: "27 дБ",
@@ -37,12 +37,13 @@ export const antennas = [
   },
 ];
 
-export const router = [
+export const routers = [
   {
     type: "router",
     id: 1,
     name: "Стационарный WiFi роутер ZBT WE 1626",
     price: 2700,
+    power: "до 100 м2",
     description:
       "Универсальный недорогой и производительный WI-FI роутер с четырьмя антеннами, четырьмя LAN-разъемами и USB входом для подключения 3G/4G модема.",
     image:
@@ -54,6 +55,7 @@ export const router = [
     id: 2,
     name: "Стационарный WiFi роутер Keenetic 4G (KN-1211)",
     price: 3500,
+    power: "до 200 м2",
     description:
       "Компактный и мощный WI-FI роутер, покрывающий сетью WI-FI помещение площадью до 250 кв метров. Лидер рынка в своем сегменте.",
     image:
@@ -65,6 +67,7 @@ export const router = [
     id: 3,
     name: "Стационарный WiFi роутер Keenetic Hero 4G (KN-2310)",
     price: 14600,
+    power: "до 400 м2",
     description:
       "Двухдиапазонный гигабитный маршрутизатор Keenetic Hero 4G (KN-2310) с четырьмя своими антеннами с усилением 5 дБ - две антенны съемные, что дает возможность подключить любую MiMo антенну. Имеет встроенный качественный модем для приема сигнала любого оператора РФ. Площадь покрытия WiFi сети до 400 кв. м.",
     image:
@@ -73,12 +76,13 @@ export const router = [
   },
 ];
 
-export const bracket = [
+export const brackets = [
   {
     type: "bracket",
     id: 1,
     name: "Кронштейн KH-200 для антенны",
     price: 400,
+    power: "20 см",
     description:
       "Удобный и компактный кронштейн для монтажа усиливающей антенны на стену, оконную раму и другие вертикальные поверхности.",
     image:
@@ -90,6 +94,7 @@ export const bracket = [
     id: 2,
     name: "Кронштейн 0,5 м поворотный для антенны",
     price: 700,
+    power: "50 см",
     description:
       "Поворотный кронштейн для монтажа внешней антенны на стену, оконную раму с выносом 50 см",
     image:
@@ -98,7 +103,7 @@ export const bracket = [
   },
 ];
 
-export const modem = [
+export const modems = [
   {
     type: "modem",
     name: "3G/4G USB модем Huawei e3372h-320",
@@ -124,49 +129,64 @@ export const pigtails = [
   },
 ];
 
-export const sim = [
+export const simCards = [
   {
     type: "sim",
     id: 1,
-    name: "Мегафон за 890 руб/мес",
+    name: "Без сим-карты",
     price: 0,
-    description:
-      "Сим-карта Мегафон с безлимитным интернетом без ограничения скорости во всех стандартах и включенным пакетом телевидения более 120 телеканалов.",
+    power: "-",
+    description: "Без сим-карты",
     image:
-      "https://thumb.tildacdn.com/tild3061-6130-4633-b965-366537633034/-/format/webp/bezlim_wifire_650.jpg",
-    link: "https://bezlimitik.ru/bezlimitnyj-internet-megafon/sim-karta-megafon-bezlimit-890",
+      "https://flyclipart.com/thumbs/cancel-no-symbol-sign-wrong-mark-choice-negative-ballyvaughan-1640845.png",
+    link: "#",
   },
   {
     type: "sim",
     id: 2,
-    name: "Билайн Безлимит 4G (постоплатный) за 450 руб/мес",
+    name: "Мегафон за 890 руб/мес",
     price: 0,
+    power: "Мегафон",
     description:
-      "Сим-карта Билайн с безлимитным интернетом без ограничения скорости в стандарте 4G/LTE и кредитной системой оплаты.",
+      "Сим-карта Мегафон с безлимитным интернетом без ограничения скорости во всех стандартах и включенным пакетом телевидения более 120 телеканалов.",
     image:
-      "https://thumb.tildacdn.com/tild6130-3332-4839-b563-313831653465/-/format/webp/_sim-karta-beeline-4.jpg",
-    link: "https://bezlimitik.ru/bezlimitnyj-internet-beeline/sim-karta-beeline-bezlimit-4g-400",
+      "https://www.finam.ru/Images/u/newsonline/202110/megafon.jpg?target=fb",
+    link: "https://bezlimitik.ru/bezlimitnyj-internet-megafon/sim-karta-megafon-bezlimit-890",
   },
   {
     type: "sim",
     id: 3,
-    name: "МТС безлимитный интернет 3G/4G 700 руб/мес",
+    name: "Билайн Безлимит 4G (постоплатный) за 450 руб/мес",
     price: 0,
+    power: "Билайн",
     description:
-      "Сим-карта с выгодным тарифом от МТС. Безлимитный интернет без ограничения скорости в сетях 3G/4G.",
+      "Сим-карта Билайн с безлимитным интернетом без ограничения скорости в стандарте 4G/LTE и кредитной системой оплаты.",
     image:
-      "https://thumb.tildacdn.com/tild3234-6464-4633-b464-336238653630/-/format/webp/S309.png",
-    link: "https://shop.bezlimitik.ru/bezlimitnyj-internet-mts/sim-karta-mts-bezlimit-3g/4g-550",
+      "https://mirinfo.ru/wp-content/uploads/2020/05/kartinka-1.-logotip-mobilnogo-operatora-beeline-2048x1365.jpg",
+    link: "https://bezlimitik.ru/bezlimitnyj-internet-beeline/sim-karta-beeline-bezlimit-4g-400",
   },
   {
     type: "sim",
     id: 4,
+    name: "МТС безлимитный интернет 3G/4G 700 руб/мес",
+    price: 0,
+    power: "МТС",
+    description:
+      "Сим-карта с выгодным тарифом от МТС. Безлимитный интернет без ограничения скорости в сетях 3G/4G.",
+    image:
+      "https://static.tildacdn.com/tild6331-3034-4563-b566-633737353835/mts-1024x576.png",
+    link: "https://shop.bezlimitik.ru/bezlimitnyj-internet-mts/sim-karta-mts-bezlimit-3g/4g-550",
+  },
+  {
+    type: "sim",
+    id: 5,
     name: "Ростелеком Безлимит в 4G за 990 руб/мес",
     price: 0,
+    power: "Ростелеком",
     description:
       "Сим-карта Ростелеком с безлимитным интернетом в стандарте 4G, работает в сети оператора ТЕЛЕ2",
     image:
-      "hhttps://thumb.tildacdn.com/tild3166-3133-4539-b234-373063396438/-/format/webp/sim-karta-rostelecom.png",
+      "https://telefon-doveria.ru/wp-content/uploads/2020/12/rostelekom.jpg",
     link: "https://bezlimitik.ru/bezlimitnyj-internet-rostelecom/sim-karta-rostelecom-bezlimit-990",
   },
 ];
