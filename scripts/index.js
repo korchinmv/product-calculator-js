@@ -19,16 +19,6 @@ const modem = form.querySelector(".modem");
 const pigtail = form.querySelector(".pigtail");
 const sim = form.querySelector(".sim");
 
-//Итоговая сумма калькулятора
-//цены и результат
-const antennaPrice = Number(form.querySelector(".antenna__price").innerText);
-const routerPrice = Number(form.querySelector(".router__price").innerText);
-const bracketPrice = Number(form.querySelector(".bracket__price").innerText);
-const modemPrice = Number(form.querySelector(".modem__price").innerText);
-const pigtailPrice = Number(form.querySelector(".pigtail__price").innerText);
-const simPrice = Number(form.querySelector(".sim__price").innerText);
-const calcResult = form.querySelector(".calculator__num");
-
 //Динамически добавляем option в select из массива данных
 const addNewOption = (array, select) => {
   array.forEach((item, index) => {
@@ -71,17 +61,32 @@ addEquipmentInCalc(modems[0], modem);
 addEquipmentInCalc(pigtails[0], pigtail);
 addEquipmentInCalc(simCards[0], sim);
 
+//Итоговая сумма калькулятора
+//цены и результат
+let antennaPrice = Number(form.querySelector(".antenna__price").innerText);
+let routerPrice = Number(form.querySelector(".router__price").innerText);
+let bracketPrice = Number(form.querySelector(".bracket__price").innerText);
+let simPrice = Number(form.querySelector(".sim__price").innerText);
+let calcResult = form.querySelector(".calculator__num");
+
+//Присваеваем товару маркер checked при выбранном товаре в селекте
+const addedChekedProduct = (selectValueNum, findedEquipment) => {
+  if (selectValueNum !== findedEquipment.id) {
+    findedEquipment.checked = false;
+  } else {
+    findedEquipment.checked = true;
+  }
+};
 //Меняем содержимое при изменении selecta
 //для антенны
 antennasPower.addEventListener("change", () => {
   let selectValueNum = Number(antennasPower.value);
-
   const findedEquipment = antennas.find((equipment) => {
     return equipment.id === selectValueNum;
   });
 
   addEquipmentInCalc(findedEquipment, antenna);
-  sum(antennaPrice, routerPrice);
+  addedChekedProduct(selectValueNum, findedEquipment);
 });
 
 //для роутера
@@ -93,7 +98,7 @@ routersPower.addEventListener("change", () => {
   });
 
   addEquipmentInCalc(findedEquipment, router);
-  sum(antennaPrice, routerPrice);
+  addedChekedProduct(selectValueNum, findedEquipment);
 });
 
 //для кронштейна
@@ -105,7 +110,7 @@ bracketsPower.addEventListener("change", () => {
   });
 
   addEquipmentInCalc(findedEquipment, bracket);
-  sum(antennaPrice, routerPrice);
+  addedChekedProduct(selectValueNum, findedEquipment);
 });
 
 //для сим-карты
@@ -117,12 +122,17 @@ simsPower.addEventListener("change", () => {
   });
 
   addEquipmentInCalc(findedEquipment, sim);
-  sum(antennaPrice, routerPrice);
+  addedChekedProduct(selectValueNum, findedEquipment);
 });
 
-const sum = (a, b) => {
-  let result = a + b;
-  calcResult.textContent = result;
+const findCheckedProduct = (antennas, routers, brackets, simCards) => {
+  const productsArray = antennas.concat(routers, brackets, simCards);
+  console.log(productsArray);
+  const filtredCheckedProducts = productsArray.filter(
+    (product) => product.checked === true
+  );
+
+  console.log(filtredCheckedProducts);
 };
 
-sum(antennaPrice, routerPrice);
+findCheckedProduct(antennas, routers, brackets, simCards);

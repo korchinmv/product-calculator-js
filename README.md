@@ -6,7 +6,7 @@
 - CSS (flexbox, grid)
 - JavaScript
 
-- [Ссылка на проект] https://korchinmv.github.io/mesto/
+- [Ссылка на проект] https://korchinmv.github.io/product-calculator-js/
 
 **О проекте**
 

@@ -138,7 +138,7 @@ export const simCards = [
     power: "-",
     description: "Без сим-карты",
     image:
-      "https://flyclipart.com/thumbs/cancel-no-symbol-sign-wrong-mark-choice-negative-ballyvaughan-1640845.png",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_the_Kingdom_of_Kongo.svg/2560px-Flag_of_the_Kingdom_of_Kongo.svg.png",
     link: "#",
   },
   {
