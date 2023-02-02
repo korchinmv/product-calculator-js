@@ -124,7 +124,7 @@ export const pigtails = [
     description:
       "Переходники (пигтейлы) для подключения модема к внешней усиливающей антенне с разъемами SMA-female. Собраны на основе радиочастотного кабеля 50 Ом.",
     image:
-      "https://thumb.tildacdn.com/tild3637-3638-4135-a466-356139313663/-/format/webp/CRC9-SMAfemale-2.jpg",
+      "https://zakupi-opt.ru/upload/iblock/ad7/ctzej3cknfpvks6up2p49jcd0l7nbbbm.jpg",
     link: "https://bezlimitik.ru/kabeli-kronshteyny-pigteyly/pigteyl-crc9-sma-female",
   },
 ];

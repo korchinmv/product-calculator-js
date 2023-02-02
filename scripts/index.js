@@ -37,13 +37,15 @@ addNewOption(routers, routersPower);
 addNewOption(brackets, bracketsPower);
 addNewOption(simCards, simsPower);
 
-//Добавляем товар в калькулятор
+//Добавляем товар в калькулятор с актуальными данными и выводим общую сумму в итог
 const addEquipmentInCalc = (equipment, key) => {
   const productName = key.querySelector(".product__name");
   const productDescription = key.querySelector(".product__description");
   const productPrice = key.querySelector(".product__price");
   const productImage = key.querySelector(".product__img");
   const productLink = key.querySelector(".product__link");
+  const calcResult = form.querySelector(".calculator__num");
+  const productsPrices = Array.from(form.querySelectorAll(".product__price"));
 
   productName.textContent = equipment.name;
   productDescription.textContent = equipment.description;
@@ -51,6 +53,13 @@ const addEquipmentInCalc = (equipment, key) => {
   productImage.src = equipment.image;
   productImage.alt = `Фотография ${equipment.name}`;
   productLink.href = equipment.link;
+
+  const sumPrices = productsPrices.reduce(
+    (accum, price) => accum + Number(price.innerText),
+    0
+  );
+
+  calcResult.textContent = sumPrices;
 };
 
 //Добавляем товар при загрузке страницы
@@ -61,23 +70,7 @@ addEquipmentInCalc(modems[0], modem);
 addEquipmentInCalc(pigtails[0], pigtail);
 addEquipmentInCalc(simCards[0], sim);
 
-//Итоговая сумма калькулятора
-//цены и результат
-let antennaPrice = Number(form.querySelector(".antenna__price").innerText);
-let routerPrice = Number(form.querySelector(".router__price").innerText);
-let bracketPrice = Number(form.querySelector(".bracket__price").innerText);
-let simPrice = Number(form.querySelector(".sim__price").innerText);
-let calcResult = form.querySelector(".calculator__num");
-
-//Присваеваем товару маркер checked при выбранном товаре в селекте
-const addedChekedProduct = (selectValueNum, findedEquipment) => {
-  if (selectValueNum !== findedEquipment.id) {
-    findedEquipment.checked = false;
-  } else {
-    findedEquipment.checked = true;
-  }
-};
-//Меняем содержимое при изменении selecta
+//Меняем содержимое карточки товара при изменении selecta
 //для антенны
 antennasPower.addEventListener("change", () => {
   let selectValueNum = Number(antennasPower.value);
@@ -86,7 +79,6 @@ antennasPower.addEventListener("change", () => {
   });
 
   addEquipmentInCalc(findedEquipment, antenna);
-  addedChekedProduct(selectValueNum, findedEquipment);
 });
 
 //для роутера
@@ -98,7 +90,6 @@ routersPower.addEventListener("change", () => {
   });
 
   addEquipmentInCalc(findedEquipment, router);
-  addedChekedProduct(selectValueNum, findedEquipment);
 });
 
 //для кронштейна
@@ -110,7 +101,6 @@ bracketsPower.addEventListener("change", () => {
   });
 
   addEquipmentInCalc(findedEquipment, bracket);
-  addedChekedProduct(selectValueNum, findedEquipment);
 });
 
 //для сим-карты
@@ -122,17 +112,4 @@ simsPower.addEventListener("change", () => {
   });
 
   addEquipmentInCalc(findedEquipment, sim);
-  addedChekedProduct(selectValueNum, findedEquipment);
 });
-
-const findCheckedProduct = (antennas, routers, brackets, simCards) => {
-  const productsArray = antennas.concat(routers, brackets, simCards);
-  console.log(productsArray);
-  const filtredCheckedProducts = productsArray.filter(
-    (product) => product.checked === true
-  );
-
-  console.log(filtredCheckedProducts);
-};
-
-findCheckedProduct(antennas, routers, brackets, simCards);
